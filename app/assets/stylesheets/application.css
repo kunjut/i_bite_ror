@@ -13,10 +13,26 @@
  *= require_tree .
  *= require_self
  */
- .field_with_errors input {
-   border-color: crimson;
- }
-
- .field_with_errors textarea {
+.field_with_errors input {
   border-color: crimson;
+}
+
+.field_with_errors textarea {
+  border-color: crimson;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  color: #333;
+}
+.mysf {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  color: #333;
+}
+.zx{
+  text-decoration: underline;
+  color: #0056b3;
 }
