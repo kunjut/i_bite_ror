@@ -35,7 +35,8 @@ class ArticlesController < ApplicationController
 
   def create                                # создание новой записи: create и params_article 
     @article = Article.new params_article   # создание в памяти, записи для Article (c разрешением)
-    
+    @article[:author] = current_user.username
+
     if @article.save                        # сохранилось? значит валид-я пройдена, .save сам запускает ее
       redirect_to @article                  # редирект на '/articles' #show
     else                                    

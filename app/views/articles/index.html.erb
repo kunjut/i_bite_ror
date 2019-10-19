@@ -7,12 +7,13 @@
 <% @articles.each do |article| %>
   <br />
   <i class="text-muted">
+    <%= article.author %>
     created at: <%= article.created_at.strftime("%e %B %Y, %H:%M") %> • 
     updated at: <%= article.updated_at.strftime("%e %B %Y, %H:%M") %> 
   </i>
 
   <!--Проверка авторзации пользователя, чтобы разрешить edit/delete-->
-  <% if user_signed_in? %>
+  <% if user_signed_in? && (current_user.username == article.author) %>
     <span class="text-muted"> — </span>
     <%= link_to 'Edit', edit_article_path(article), class: "badge badge-pill badge-secondary" %>
     <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: "badge badge-pill badge-danger" %>

@@ -6,13 +6,14 @@
 <p>
 <!--Вывести created_at и updated_at, с модификацией формата вывода-->
   <i class="text-muted">
+    <%= @article.author %>
     created at: <%= @article.created_at.strftime("%e %B %Y, %R") %> • 
     updated at: <%= @article.updated_at.strftime("%e %B %Y, %R") %> 
   </i>
 
 <!--Если пользователь вошел под логином/паролем дать возможность редактировать/удалять статью-->
 <!--Нужно закрепить каждую статью за своим пользователем, чтобы чужую нельзя было редактировать/удалять-->
-  <% if user_signed_in? %>
+  <% if user_signed_in? && (current_user.username == @article.author) %>
     <span class="text-muted"> — </span>
     <%= link_to 'Edit', edit_article_path(@article), class: "badge badge-pill badge-secondary" %>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "badge badge-pill badge-danger" %>
