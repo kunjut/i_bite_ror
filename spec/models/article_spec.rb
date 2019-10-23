@@ -1,4 +1,3 @@
-#require 'spec_helper'
 require 'rails_helper'
 
 describe Article do
@@ -10,5 +9,18 @@ describe Article do
 
   describe "associations" do
     it { should have_many :comments }
+  end
+
+  describe "#subject" do
+    it "returns the article title" do
+
+      # создаем объект article хитрым способом
+      # здесь делаем arrange + act одновременно
+      article = create(:article, title: 'Lorem Ipsum')
+
+      # здесь делаем assert (проверку)
+      expect(article.subject).to eq 'Lorem Ipsum'
+
+    end
   end
 end
