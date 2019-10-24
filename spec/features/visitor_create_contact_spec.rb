@@ -9,9 +9,12 @@ feature "Contact creation" do
   #проверка возможности создать сообщение в форме контакта
   scenario "allows a guest to create contact" do
     visit '/contacts'
-    fill_in 'contact_email', with: 'user@example.com'
-    fill_in 'contact_message', with: 'So, hi, hello!'
+
+    fill_in :contact_email, with: 'user@example.com'
+    fill_in :contact_message, with: 'So, hi, hello!'
+
     click_button 'Send Message'
+
     expect(page).to have_content 'Thanks'
   end
 end
