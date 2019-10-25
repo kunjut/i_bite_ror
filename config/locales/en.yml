@@ -34,3 +34,13 @@ en:
 
   contacts:
     contact_me: "Contact me"
+  
+  articles:
+    add_new: "Add new article"
+    title_stub: "Title test create the article"
+    content_stub: "Content test create the article"
+    btn_save_article: "Save article"
+
+  current_user:
+    username: "%{username}"
+    
