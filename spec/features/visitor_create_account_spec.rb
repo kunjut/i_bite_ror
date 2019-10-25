@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'support/session_helper'
 
 feature "Account creation" do
   #проверка возможности регистрации нового аккаунта
