@@ -55,7 +55,7 @@
           </ul>
           <span class="navbar-text mysf">
             <% if user_signed_in? %>
-              Hello, <%= link_to current_user.username, edit_user_registration_path %> | 
+              Hello, <%= link_to t('current_user.username', username: current_user.username), edit_user_registration_path %> | 
               <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to 'Sign in', new_user_session_path %>
