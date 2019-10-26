@@ -8,3 +8,10 @@ def sign_up
 
   click_button 'Sign up'  
 end
+
+def add_article
+  visit new_article_path
+  fill_in :article_title, with: I18n.t('articles.title_stub')
+  fill_in :article_content, with: I18n.t('articles.content_stub')
+  click_button I18n.t('articles.btn_save_article')
+end
