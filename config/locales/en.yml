@@ -40,6 +40,11 @@ en:
     title_stub: "Title test create the article"
     content_stub: "Content test create the article"
     btn_save_article: "Save article"
+    title_upd_stub: "Title updated for test"
+    content_upd_stub: "Content updated for test"
+    btn_upd_article: "Save article changes"
+    comment: "Test comment"
+    btn_save_comment: "Create comment"
 
   current_user:
     username: "%{username}"
